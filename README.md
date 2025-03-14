@@ -1,40 +1,54 @@
-# Frontend Challenge
+# React + TypeScript + Vite
 
-### Objetivo
-Desenvolver uma aplicação de listagem e detalhe de personagens de quadrinhos.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-#### Requisitos
-- Deve ser uma SPA “single page application” (dar preferencia ao React);
-- Não utilizar bibliotecas de UI como: bootstrap, semantic-ui, antdesign e etc;
-- Utilizar API da Marvel (https://developer.marvel.com/docs);
-- Disponibilizar em uma URL pública do projeto rodando para avaliação;
-- Disponibilizar código em repositório Git de sua preferência, commitando cada fase do seu processo de desenvolvimento;
-- Seguir layout da pasta `./assets`, respeitando as páginas, features e componentes (não será avaliado “pixel perfect”).
+Currently, two official plugins are available:
 
-#### Requisitos funcionais
-- Página de listagem de personagens (home):
-  - Exibir os 20 primeiros resultados da API;
-  - Permitir ordenação por nome do personagem;
-  - Permitir filtrar por nome, pelo campo de busca;
-  - Permitir mostrar apenas os personagens favoritos;
-  - Permitir o usuário favoritar/desfavoritar até 5 personagens;
-- Página de detalhe do personagem:
-  - Exibir dados do personagem;
-  - Exibir últimos 10 quadrinhos lançados deste personagem (onSaleDate);
-  - Permitir o usuário favoritar/desfavoritar (dentro do limite de 5).
-  
-#### `Bônus (não obrigatório)`
-- Adicionar paginação a listagem para exibir além dos 20 personagens iniciais;
-- Persistir os dados de favoritos (para manter os dados após o reload da página);
-- Layout responsivo;
-- Utilização de ES6+;
-- Utilização de ferramentas para garantir a qualidade do código;
-- Teste e2e;
-- CI/CD.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-### Dicas
-- Valorizamos muito testes em nosso processo de desenvolvimento;
-- Aqui todos os desenvolvedores podem participar do processo de avaliação técnica então oriente os avaliadores a como instalar, testar e executar seu código.
+## Expanding the ESLint configuration
 
-<br/>
-<br/>
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+
+```js
+export default tseslint.config({
+  extends: [
+    // Remove ...tseslint.configs.recommended and replace with this
+    ...tseslint.configs.recommendedTypeChecked,
+    // Alternatively, use this for stricter rules
+    ...tseslint.configs.strictTypeChecked,
+    // Optionally, add this for stylistic rules
+    ...tseslint.configs.stylisticTypeChecked,
+  ],
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
+
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default tseslint.config({
+  plugins: {
+    // Add the react-x and react-dom plugins
+    'react-x': reactX,
+    'react-dom': reactDom,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended typescript rules
+    ...reactX.configs['recommended-typescript'].rules,
+    ...reactDom.configs.recommended.rules,
+  },
+})
+```
