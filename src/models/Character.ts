@@ -12,4 +12,9 @@ export default interface Hero {
       collectionURI: string;
       items: { name: string; resourceURI: string }[];
     };
+    comics: {
+      available: number;
+      collectionURI: string;
+      items: { name: string; resourceURI: string }[];
+    };
   }
