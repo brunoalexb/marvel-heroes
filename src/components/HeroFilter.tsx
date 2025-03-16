@@ -17,8 +17,8 @@ export default function HeroFilter({ onSortChange, showFavorites, onFavoritesTog
   };
 
   return (
-    <div className="flex items-center justify-between py-4 px-6 bg-white shadow-md rounded-lg">
-      <div className="flex items-center space-x-2 ml-auto mr-4">
+    <div className="flex items-center justify-center py-4 px-6 bg-white rounded-lg ml-170">
+      <div className="flex items-center space-x-2">
         <img
           src="/../src/assets/icones/heroi/noun_Superhero_2227044@1,5x.svg" 
           alt="Ordenar"
