@@ -7,4 +7,9 @@ export default interface Hero {
       path: string;
       extension: string;
     };
+    series: {
+      available: number;
+      collectionURI: string;
+      items: { name: string; resourceURI: string }[];
+    };
   }
