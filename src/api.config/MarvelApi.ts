@@ -5,8 +5,7 @@ const PRIVATE_KEY = '911ce96dc299400b9e5bf8e1bc6edfa4c50f28fd'; // Use sua chave
 const FIXED_TS = '1'; // Timestamp fixo
 const FIXED_HASH = 'f6a27936ae606f0193e38ea2656383b7'; // Hash fixo
 
-// Configuração da API com valores fixos
-// Configuração da API com valores fixos
+
 const api = axios.create({
     baseURL: 'https://gateway.marvel.com/v1/public',
     params: {
