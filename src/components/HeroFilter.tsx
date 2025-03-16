@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import favoritar from '../assets/icones/heart/Path.svg';
+import ordenar from '../assets/toggle/Group 2.svg';
+import heroi from '../assets/icones/heroi/noun_Superhero_2227044@1,5x.svg';
+
 
 export default function HeroFilter({ onSortChange, showFavorites, onFavoritesToggle }) {
   const [isFavoriteOnly, setIsFavoriteOnly] = useState(showFavorites || false);
@@ -21,7 +24,7 @@ export default function HeroFilter({ onSortChange, showFavorites, onFavoritesTog
     <div className="flex items-center justify-center py-4 px-6 bg-white rounded-lg ml-170">
       <div className="flex items-center space-x-2">
         <img
-          src="/../src/assets/icones/heroi/noun_Superhero_2227044@1,5x.svg" 
+          src={heroi} 
           alt="Ordenar"
           className="w-5 h-5"
         />
@@ -36,7 +39,7 @@ export default function HeroFilter({ onSortChange, showFavorites, onFavoritesTog
           title="Clique para ordenar"
         >
           <img
-            src="/../src/assets/toggle/Group 2.svg" 
+            src={ordenar} 
             alt="Ordenar"
             className="w-18 h-10 cursor-pointer"
           />
