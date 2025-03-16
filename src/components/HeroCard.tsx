@@ -34,6 +34,7 @@ function HeroCard({ heroi, isFavorited, onFavoriteToggle }: HeroCardProps) {
           />
         </button>
       </div>
+      
     </div>
   );
 }

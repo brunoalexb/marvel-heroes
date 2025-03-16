@@ -27,7 +27,7 @@ function SearchBar({ onSearch }: SearchBarProps) {
           className="border-gray-400 text-2xl text-red-500 font-bold p-6 pl-12 rounded-full w-full bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-400"
           placeholder="Procure por heróis"
           value={searchTerm}
-          onChange={handleInputChange} // Atualiza o estado no evento de input
+          onChange={handleInputChange} 
         />
         <img
           src={lupa}

@@ -33,11 +33,20 @@ function HeroList() {
 
   // Função para alternar favoritos
   const toggleFavorite = (heroId: number) => {
+    // Verifica a quantidade de favoritos antes de permitir adicionar mais um
+    const favoritosAtuais = herois.filter((heroi) => heroi.isFavorite);
+    const heroiSelecionado = herois.find((heroi) => heroi.id === heroId);
+  
+    if (!heroiSelecionado?.isFavorite && favoritosAtuais.length >= 5) {
+      alert("Você só pode selecionar até 5 favoritos!");
+      return;
+    }
+  
     const updatedHerois = herois.map((heroi) =>
       heroi.id === heroId ? { ...heroi, isFavorite: !heroi.isFavorite } : heroi
     );
     setHerois(updatedHerois);
-
+  
     // Atualiza a lista filtrada dependendo do filtro de favoritos
     const filtered = showFavorites
       ? updatedHerois.filter((heroi) => heroi.isFavorite)
