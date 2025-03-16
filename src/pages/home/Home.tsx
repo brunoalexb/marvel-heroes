@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Header from '../../components/Header';
 import SearchBar from '../../components/SearchBar';
 import HeroList from '../../components/HeroList';
+import Footer from '../../components/Footer';
 
 
 function Home() {
@@ -16,6 +17,7 @@ function Home() {
     <div>
     <Header />
     <HeroList />
+    <Footer />
   </div>
   )
 }
