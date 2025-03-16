@@ -51,8 +51,8 @@ export default function HeroFilter({ onSortChange, showFavorites, onFavoritesTog
           <img
             src={
               isFavoriteOnly
-                ? "/../src/assets/icones/heart/Path.svg"
-                : "/../src/assets/icones/heart/Path.svg"
+                ? "/../src/assets/icones/heart/Path.png"
+                : "/../src/assets/icones/heart/Path.png"
             } 
             alt="Favoritos"
             className="w-5 h-5 mr-2 cursor-pointer"
