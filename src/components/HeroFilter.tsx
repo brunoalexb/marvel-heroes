@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import favoritar from '../assets/icones/heart/Path.svg';
 
 export default function HeroFilter({ onSortChange, showFavorites, onFavoritesToggle }) {
   const [isFavoriteOnly, setIsFavoriteOnly] = useState(showFavorites || false);
@@ -51,8 +52,8 @@ export default function HeroFilter({ onSortChange, showFavorites, onFavoritesTog
           <img
             src={
               isFavoriteOnly
-                ? "/../src/assets/icones/heart/Path.png"
-                : "/../src/assets/icones/heart/Path.png"
+                ? favoritar
+                : favoritar
             } 
             alt="Favoritos"
             className="w-5 h-5 mr-2 cursor-pointer"
