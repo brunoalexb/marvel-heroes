@@ -4,12 +4,12 @@ import lupa from '../../assets/busca/Lupa/Shape@2x.png';
 
 function Header() {
   return (
-    <header className="flex items-center justify-center p-6">
+    <header className="flex items-center justify-center p-12">
       <img src={logo} alt="Marvel Logo" className="h-14 mr-4" />
       <div className="relative w-2/5">
         <input
           type="text"
-          className="border-gray-400 text-1xl font-bold p-6 pl-12 rounded-full w-full bg-white focus:outline-none focus:ring-2 focus:ring-red-400"
+          className="border-gray-400 text-1xl font-bold p-4 pl-12 rounded-full w-full bg-white focus:outline-none focus:ring-2 focus:ring-red-400"
           placeholder="Procure por heróis"
         />
         <img

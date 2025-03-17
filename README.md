@@ -1,54 +1,116 @@
-# React + TypeScript + Vite
+# Heroes App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Sobre o Projeto
+O **Heroes App** é uma aplicação web que permite aos usuários explorar os personagens do universo Marvel. Utilizando a [API da Marvel](https://developer.marvel.com/), o aplicativo exibe detalhes sobre cada personagem, incluindo informações como nome, descrição e imagem.
 
-Currently, two official plugins are available:
+## Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React**: Biblioteca para construção de interfaces de usuário.
+- **TypeScript**: Superset do JavaScript que adiciona tipagem estática ao código.
+- **Tailwind CSS**: Framework CSS para estilização rápida e eficiente.
+- **Vite**: Ferramenta de build para desenvolvimento frontend rápido.
+- **Yarn**: Gerenciador de pacotes para dependências do projeto.
 
-## Expanding the ESLint configuration
+## Funcionalidades
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Listagem de personagens da Marvel.
+- Exibição de detalhes individuais de cada personagem.
+- Busca por personagens.
+- Interface responsiva e amigável.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
+## Como Executar o Projeto
+
+### Pré-requisitos
+
+- Yarn instalado globalmente (`npm install -g yarn`)
+- Chave pública da [API da Marvel](https://developer.marvel.com/)
+- criação do hash(https://xorbin.com/tools/md5-hash-calculator)
+
+### Passos para rodar o projeto localmente
+
+1. Clone este repositório:
+
+   ```bash
+   git clone https://github.com/seu-usuario/heroes-app.git
+   cd heroes-app
+   ```
+
+2. Instale as dependências:
+
+   ```bash
+   yarn install
+   ```
+
+3. Inicie o servidor de desenvolvimento:
+
+   ```bash
+   yarn dev
+   ```
+
+4. Acesse a aplicação no navegador:
+
+   ```
+   http://localhost:5173
+   ```
+
+## Estrutura do Projeto
+
+```
+heroes-app/
+├── public/           # Arquivos públicos
+├── src/
+│   ├── api.config/   # Configuração de chamadas à API
+│   ├── assets/       # Imagens, fontes e outros arquivos estáticos
+│   ├── components/   # Componentes reutilizáveis
+│   ├── models/       # Definições de tipos e interfaces
+│   ├── pages/        # Páginas da aplicação
+│   ├── services/     # Comunicação com a API da Marvel
+│   ├── App.tsx       # Componente raiz
+│   ├── main.tsx      # Ponto de entrada do React
+│   └── index.css     # Estilos globais
+├── .env              # Variáveis de ambiente
+├── package.json      # Dependências e scripts
+├── yarn.lock         # Gerenciador de pacotes
+└── vite.config.ts    # Configuração do Vite
+```
+
+## Endpoints da API da Marvel
+
+Certifique-se de consultar a [documentação oficial da API da Marvel](https://developer.marvel.com/docs) para informações sobre os endpoints disponíveis.
+
+### Exemplo de Chamada à API
+
+```ts
+import axios from 'axios';
+
+const api = axios.create({
+  baseURL: 'https://gateway.marvel.com/v1/public',
+});
+
+export const getCharacters = async () => {
+  const response = await api.get(`/characters`, {
+    params: {
+      apikey: process.env.VITE_MARVEL_API_KEY,
     },
-  },
-})
+  });
+  return response.data;
+};
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Contribuição
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Contribuições são bem-vindas! Siga os passos abaixo:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+1. Faça um fork do repositório.
+2. Crie uma branch para sua feature ou correção de bug (`git checkout -b minha-feature`).
+3. Commit suas alterações (`git commit -m 'Minha nova feature'`).
+4. Faça o push para a branch (`git push origin minha-feature`).
+5. Abra um Pull Request.
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
+
+---
+
+Feito com 💻 por Bruno Alexandre.
