@@ -6,7 +6,7 @@ interface ComicsListProps {
 
 function ComicsList({ comics }: ComicsListProps) {
   return (
-    <div className="p-4 ">
+    <div className="p-4 w-200">
       <h2 className="text-3xl font-bold mb-4 p-8">Últimos lançamentos</h2>
       <div className="grid grid-cols-5 gap-4">
         {comics.map((comic) => (
@@ -14,7 +14,7 @@ function ComicsList({ comics }: ComicsListProps) {
             <img
               src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
               alt={comic.title}
-              className="w-40 h-60 overflow-hidden rounded"
+              className="w-full h-full object-cover"
             />
             <h3 className="mt-2 text-sm font-semibold">{comic.title}</h3>
           </div>

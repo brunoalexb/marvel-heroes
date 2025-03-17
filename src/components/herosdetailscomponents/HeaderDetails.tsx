@@ -4,7 +4,7 @@ import lupa from '../../assets/busca/Lupa/Shape@2x.png';
 
 function Header() {
   return (
-    <header className="flex items-center justify-center p-4">
+    <header className="flex items-center justify-center p-6">
       <img src={logo} alt="Marvel Logo" className="h-14 mr-4" />
       <div className="relative w-2/5">
         <input
