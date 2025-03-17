@@ -37,15 +37,17 @@ function HeroDetails() {
 
   return (
     <>
-      <HeaderDetails />
-      <div className="p-4">
-        <button onClick={() => navigate(-1)} className="text-blue-500 mb-4">
-          Voltar
-        </button>
-        <HeroInfos heroi={heroi} />
-        <ComicsList comics={comics} />
+      <div className="bg-green-50 min-h-screen"> {/* Cor de fundo para a página inteira */}
+        <HeaderDetails />
+        <div className="p-4">
+          <button onClick={() => navigate(-1)} className="text-blue-500 mb-4">
+            Voltar
+          </button>
+          <HeroInfos heroi={heroi} />
+          <ComicsList comics={comics} />
+        </div>
+        <Footer /> 
       </div>
-      <Footer />
     </>
   );
 }
